@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Youtube Videos</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+
+  <ion-card *ngFor="let post of posts">
+
+    <ion-card-title>
+      {{post.snippet.title}}
+    </ion-card-title>
+
+    <ion-card-content>
+
+        <!--<img [src]="post.snippet.thumbnails.high.url" />-->
+        <iframe width="100%" height="215" [src]="post.id.videoId | youtubeEmbed" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
+
+    </ion-card-content>
+
+  </ion-card>
+
+
+
+
+
+
+
+  <ion-fab bottom right class="fab-position">
+    <button ion-fab color="primary" (click)="loadSearchPage()"><ion-icon name="search"></ion-icon></button>
+  </ion-fab>
+</ion-content>
