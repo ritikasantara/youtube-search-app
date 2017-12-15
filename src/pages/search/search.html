@@ -14,11 +14,17 @@
 
 
 <ion-content padding>
-  <form>
+
+  <form (ngSubmit)="saveForm()">
     <ion-item>
-      <ion-input (ngModel)="search_term"></ion-input>
+      <ion-label>Search Query</ion-label>
+      <ion-input [(ngModel)]="query" type="text"  name="query"></ion-input>
     </ion-item>
-    <button ion-button block (click)="onSearch(input)">Search</button>
+    <ion-item>
+        <ion-label>Max Results</ion-label>
+      <ion-input [(ngModel)]="maxRes" type="text" name="maxRes"></ion-input>
+    </ion-item>
+    <button ion-button block type="submit">Search</button>
   </form>
 
 </ion-content>
